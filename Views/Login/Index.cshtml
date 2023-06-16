@@ -1,0 +1,124 @@
+@model Jogador
+
+@{
+    ViewData["Title"] = "Login";
+}
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gamer</title>
+    <link rel="stylesheet" href="~/css/style.css">
+    <link rel="stylesheet" href="~/css/login.css">
+    
+</head>
+
+<h2>
+    @TempData.Peek("Message")
+</h2>
+
+
+@* <form method="post" action="@Url.Action("Logar")">
+
+    <label for="">Email</label>
+    <input type="email" name="Email" required>
+
+    <label for="">Senha</label>
+    <input type="password" name="Senha" required>
+
+    <button type="submit">Logar</button> 
+
+</form> *@
+
+<!-- FORMULÁRIO DE LOGIN -->
+    <main class="fundo-login">
+        <span>@TempData.Peek("Message")</span>
+        <div class="bkg-login">
+            <form class="frm-login" method="post" action="@Url.Action("Logar")">
+                <div class="login-title">
+                    <hr class="login-line">
+                    <h1>Login</h1>
+                </div>
+                <div class="frm-linha">
+                    <div class="bkg-input">
+                        <img src="~/assets/vector-user.svg" alt="ícone de usuário">
+                        <input type="email" id="email" name="Email" placeholder="Digite seu e-mail:" required>
+                    </div>
+                </div>
+                <div class="frm-linha">
+                    <div class="bkg-input">
+                        <img src="~/assets/vector-key.svg" alt="ícone de chave">
+                        <input type="password" id="password" name="Senha" placeholder="Digite sua senha:" required>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-logar">Logar</button>
+                <span>@TempData.Peek("Message")</span>
+            </form>
+        </div>
+
+    </main>
+    <main>
+
+        <section class="container-grid cadastro-equipes">
+            
+            
+            <form action="" class="frm-cad-equipe">
+                <div class="cadequipe-titulo">
+                    <h1>Cadastro de Equipes</h1>
+                    <hr>
+                </div>
+
+                <input class="campo-entrada" type="number" id="idEquipe" placeholder="Digite o Id da sua equipe:">
+                <input class="campo-entrada" type="text" placeholder="Digite o nome da sua equipe:">
+                <label class="foto" for="foto-file">
+                    Nenuma imagem selecionada...
+                    <input  type="file" id="foto-file">
+                </label>
+                
+                <button>Cadastro</button>
+                
+                
+                
+                <!-- <select class="equipeid" id="equipeid">
+                    <option value="">Selecione uma Equipe</option>
+                    <option value="x">Equipe X</option>
+                    <option value="y">Equipe Y</option>
+                </select> -->
+            </form>
+
+            <!-- TABELA CADASTRO DE EQUIPES -->
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Nome</th>
+                        <th>Foto</th>
+                        <th>&spades;</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Loud</td>
+                        <td><img class="green-play" src="./assets/green-play.svg" alt=""></td>
+                        <td><img class="yellow-trash" src="./assets/trash.png" alt=""></td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Loud</td>
+                        <td><img class="green-play" src="./assets/green-play.svg" alt=""></td>
+                        <td><img class="yellow-trash" src="./assets/trash.png" alt=""></td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Loud</td>
+                        <td><img class="green-play" src="./assets/green-play.svg" alt=""></td>
+                        <td><img class="yellow-trash" src="./assets/trash.png" alt=""></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
